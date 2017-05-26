@@ -35,7 +35,7 @@ def read_meta(name):
         return None
 
 
-@app.before_first_request
+@app.before_request
 def refresh_meta():
     global snaps, snaps_by_id
     names = [os.path.splitext(n)[0] for n in os.listdir(FILES) if n.endswith('.meta')]
